@@ -1,0 +1,38 @@
+.header {
+    display: flex;
+    height:10vh ;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    position: relative;
+    border-bottom: 1px solid #d1e0d1;
+}
+
+.logo{
+    height: 100%;
+    width: auto;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;           
+    margin-left: auto;   
+}
+
+.header-nav-item{
+    font-size: 16px;
+    font-weight: 500;
+    color: #24402f;
+}
+
+.header-nav-btn{
+    width: 100px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #24402f;
+    color: white;
+}
+
+
+
