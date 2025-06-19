@@ -1,28 +1,56 @@
 const asyncHandler = require("express-async-handler")
+const Budget = require("../models/budgetModel")
 
 const getBudgets = asyncHandler(async (req, res)=>{
-    res.status(200).json({message : "Get all user budgets"})
+    const budgets = await Budget.find()
+    res.status(200).json(budgets)
 })
 
 const createBudget = asyncHandler(async (req, res)=>{
-    const {name,email,phone} = req.body;
-    if (!name || !email || !phone){
+    const {income,totalBudget,amountUsed} = req.body;
+    if (!income || !totalBudget || !amountUsed){
         res.status(400);
         throw new Error("All fields are required")
     }
-    res.status(201).json({message : "Create budget"})
+    const budget = await Budget.create({
+        income,
+        totalBudget,
+        amountUsed
+    })
+    res.status(201).json(budget)
 })
 
 const updateBudget = asyncHandler(async (req, res)=>{
-    res.status(200).json({message : `Update budget for ${request.params.id}`})
+    const budget = await Budget.findById(req.params.id)
+    if (!budget){
+        res.status(404)
+        throw new Error("Budget not found")
+    }
+    const updatedBudget = await Budget.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        {new : true}
+    )
+    res.status(200).json(updatedBudget)
 })
  
 const deleteBudget = asyncHandler( async (req, res)=>{
-    res.status(200).json({message :`Delete budget for ${request.params.id}`})
+    const budget = await Budget.findById(req.params.id)
+    if (!budget){
+        res.status(404)
+        throw new Error("Budget not found")
+    }
+    await budget.deleteOne()
+    res.status(200).json(budget)
 })
 
 const getBudget = asyncHandler(async (req, res)=>{
-    res.status(200).json({message :`Get budget for ${request.params.id}`})
+    const budget = await Budget.findById(req.params.id)
+    if (!budget){
+        res.status(404)
+        throw new Error("Budget not found")
+    }
+    res.status(200).json(budget)
 })
 
 

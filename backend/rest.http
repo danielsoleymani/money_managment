@@ -1,6 +1,8 @@
-POST http://localhost:5001/api/budget
+DELETE http://localhost:5001/api/budget/685436b2f9835edb938549b8
 Content-Type: application/json
 
 {
-
+    "income" : 5000,
+    "totalBudget" : 3000,
+    "amountUsed" : 1500
 }
