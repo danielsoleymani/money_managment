@@ -1,8 +1,8 @@
-DELETE http://localhost:5001/api/budget/685436b2f9835edb938549b8
+POST http://localhost:5001/api/users/login
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjg1NTY3OWEwMDM3NzU1NDg0Y2RiMzZmIiwibmFtZSI6IkRhbmllbCBTb2xleW1hbmkiLCJlbWFpbCI6ImRhbmllbC5zb2xleW1hbmkxMkBnbWFpbC5jb20iLCJhZ2UiOjE4LCJsb2NhdGlvbiI6IkJldGhsZWhlbSwgUEEiLCJtb250aGx5SW5jb21lIjoyMDAwfSwiaWF0IjoxNzUwOTQ2NTAxLCJleHAiOjE3NTA5NDY1NjF9.dYHGLMpy-xmIz1UGK_ihVq8KNcUe0dmB27QUAbFyc5M
 
 {
-    "income" : 5000,
-    "totalBudget" : 3000,
-    "amountUsed" : 1500
+    "email" : "daniel.soleymani12@gmail.com", 
+    "password" : "D7S7nnpp"
 }
