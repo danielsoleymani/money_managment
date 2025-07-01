@@ -2,8 +2,9 @@ const mongoose = require ('mongoose')
 
 const budgetSchema = mongoose.Schema({
         user_id : {
-            type: String,
-            required : [true, "Please enter a user Id"]
+            type: mongoose.Schema.Types.ObjectId,
+            required : true,
+            ref : "User"
         },
         income : {
             type: Number,

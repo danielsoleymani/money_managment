@@ -54,7 +54,7 @@ const loginUser = asyncHandler(async(req, res)=>{
                 monthlyIncome : user.monthlyIncome
             },
         }, process.env.ACCESS_TOKEN_SECRET,
-        {expiresIn: "1m"}
+        {expiresIn: "60m"}
     )
         res.status(200).json({accessToken})
     } else{

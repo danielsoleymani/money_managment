@@ -1,14 +1,22 @@
 import './App.css';
-import Header from "./components/Header"
-import HeroArea from './components/HeroArea';
+import { HashRouter as Router, Routes, Route } from "react-router-dom"
+import Home from './Pages/home';
+import SignIn from './Pages/signin';
+import SignUp from './Pages/signup';
+import Dashboard from './Pages/dashboard';
+
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <HeroArea/>
-    </div>
-  );
+    <Router>
+      <Routes>
+        <Route path = "/" element = {<Home/>} />
+        <Route path = "/signin" element = {<SignIn/>} />
+        <Route path = "/signup" element = {<SignUp/>} />
+        <Route path = "/dashboard" element = {<Dashboard/>} />
+      </Routes>
+    </Router>
+  )
 }
 
 export default App;
